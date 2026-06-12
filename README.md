@@ -2,11 +2,11 @@
 
 **The only best way to read *Light Novel* properly.**
 
-[Visit Website](https://watanare-reader.me) | [Report an Issue](https://github.com/NITHINSPACETIME/novels-reader/issues) | Give it a ⭐ If you liked it!
+[Visit Website](https://watanare-reader.pages.dev) | [Report an Issue](https://github.com/danhnth/watanare-reader/issues) | Give it a ⭐ If you liked it!
 
-![Build Status](https://img.shields.io/vercel/deploy/novels-reader/main?style=for-the-badge&logo=vercel)
-![Last Commit](https://img.shields.io/github/last-commit/NITHINSPACETIME/novels-reader?style=for-the-badge)
-![Stars](https://img.shields.io/github/stars/NITHINSPACETIME/novels-reader?style=for-the-badge)
+![Build Status](https://img.shields.io/github/actions/workflow/status/danhnth/watanare-reader/deploy.yml?style=for-the-badge&logo=github)
+![Last Commit](https://img.shields.io/github/last-commit/danhnth/watanare-reader?style=for-the-badge)
+![Stars](https://img.shields.io/github/stars/danhnth/watanare-reader?style=for-the-badge)
 
 <br />
 
@@ -19,29 +19,20 @@
 ## 📚 About
 **Watanare Reader** is a dedicated reader for the *Watashi ga Koibito ni Nareru Wake Naijan, Muri Muri! (Muri Janakatta!?)* light novel series, built to deliver the best possible reading experience.
 
-Tired of reading PDFs that hurt your eyes or sketchy sites filled with ads? This project is my attempt at creating the *perfect* reading experience for fans of *Light novels*.
-
-Whether you're catching up on the latest volume or rereading your favorite chapters, this website gives you a distraction-free, premium experience (UI) worthy Reading Experience.
-
-<p align="center">
-  <img src="public/assets/preview-selection.png" alt="Novels Reader Selection" width="100%">
-  <br>
-  <i>Navigate through volumes with ease</i>
-</p>
+Tired of reading PDFs that hurt your eyes or sketchy sites filled with ads? This project is built to give fans of light novels a clean, distraction-free way to read their favorite series.
 
 ## ✨ Features
-- **📖 Clean UI**: Glassmorphism design so slick it turns heads.
-- **📱 Responsive**: Optimized for every device.
-- **⌨️ Keyboard Shortcuts**: Power-user friendly! Press `Ctrl + /` to see them all.
-- **🔖 Progress Sync**: Synced to your account. Never lose your place again. *(Coming Soon)*
-- **🎨 Custom Themes**: Includes Nice themes in the reader for best reading experience.
-- **🔍 Smart Navigation**: Intuitive table of contents and volume selection. With Proper Official sequence to Read Volumes in order
+- **EPUB-based Reader**: Parses EPUB files directly in the browser for a true book-like experience with proper chapter navigation.
+- **Keyboard Shortcuts**: Navigate chapters, toggle settings, and control the reader without touching the mouse (`Ctrl + /` for the full list).
+- **Reading Progress**: Saves your current chapter and scroll position locally so you can pick up exactly where you left off.
+- **Customizable Themes**: Switch between light, dark, and sepia reading themes to reduce eye strain.
+- **Table of Contents**: Auto-generated TOC from the EPUB spine for quick jumps between chapters.
+- **Volume & Chapter Selection**: Browse all available volumes and chapters in a structured grid layout.
+- **Guestbook**: Leave messages and interact with other readers.
+- **Static Export**: Built as a static site for fast, edge-cached delivery on Cloudflare Pages.
 
-<p align="center">
-  <img src="public/assets/preview-reading.png" alt="Watanare Reader Detail" width="100%">
-  <br>
-  <i>Immersive reading interface with progress tracking</i>
-</p>
+## 🙏 Credits
+This project is based on the original [novels-reader](https://github.com/NITHINSPACETIME/novels-reader) by [NITHINSPACETIME](https://github.com/NITHINSPACETIME). The core EPUB parsing engine, reader components, and overall architecture were adapted from that codebase. Huge thanks for the solid foundation.
 
 ## ⚖️ Legal Information
 **Disclaimer**: This is a fan-made project created for educational and entertainment purposes only.
