@@ -1,0 +1,483 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  --radius: 0.5rem;
+
+  --font-cinzel: var(--font-cinzel), serif;
+  --font-cinzel-deco: var(--font-cinzel-deco), serif;
+  --font-serif: var(--font-playfair), var(--font-merriweather), var(--font-lora), ui-serif, Georgia, serif;
+}
+
+@layer base {
+  :root {
+    /* Watanare Light Theme — bright, clean, pink-accented */
+    --background: 350 30% 98%;
+    --foreground: 340 15% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 340 15% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 340 15% 12%;
+
+    --primary: 340 82% 52%; /* hot pink #e91e63 */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 340 15% 94%;
+    --secondary-foreground: 340 15% 12%;
+
+    --muted: 340 10% 96%;
+    --muted-foreground: 340 5% 50%;
+
+    --accent: 340 60% 95%;
+    --accent-foreground: 340 82% 45%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 340 15% 90%;
+    --input: 340 15% 90%;
+    --ring: 340 82% 52%;
+  }
+
+  .dark {
+    --background: 240 10% 4%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 4%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 4%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 350 80% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 240 4% 16%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 4% 16%;
+    --muted-foreground: 240 5% 65%;
+
+    --accent: 240 4% 16%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 4% 16%;
+    --input: 240 4% 16%;
+    --ring: 350 80% 50%;
+  }
+
+  .theme-cote {
+    --primary: 156 72% 38%; 
+    --ring: 156 72% 38%;
+  }
+
+  .theme-rezero {
+    --primary: 263 80% 58%;
+    --ring: 263 80% 58%;
+    --accent: 263 30% 15%;
+    --accent-foreground: 263 80% 85%;
+  }
+
+  .theme-orv {
+    --primary: 195 100% 50%; /* neon cyan #00f0ff */
+    --ring: 195 100% 50%;
+    --accent: 195 30% 12%;
+    --accent-foreground: 195 100% 85%;
+  }
+
+  .theme-watanare {
+    --primary: 340 82% 52%; /* hot pink #e91e63 */
+    --ring: 340 82% 52%;
+    --accent: 340 60% 95%;
+    --accent-foreground: 340 82% 45%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+
+/* Global Minimal Scrollbar */
+*::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: hsl(var(--border));
+  border-radius: 9999px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: hsl(var(--muted-foreground));
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: hsl(var(--border)) transparent;
+}
+
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
+.will-change-transform {
+  will-change: transform;
+}
+
+.will-change-opacity {
+  will-change: opacity;
+}
+
+
+.reader-content {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 500px;
+}
+
+
+.backdrop-blur-sm,
+.backdrop-blur-md,
+.backdrop-blur-xl {
+  backface-visibility: hidden;
+}
+
+
+img {
+  content-visibility: auto;
+}
+
+/* ORV Custom Sci-Fi System / Star Stream Styles */
+.theme-orv {
+  background-color: #020204 !important;
+}
+
+.reader-content .orv-system-window {
+  background-color: rgba(2, 2, 4, 0.95) !important;
+  border: 1px solid rgba(6, 182, 212, 0.35) !important;
+  box-shadow: 0 0 30px rgba(6, 182, 212, 0.2) !important;
+  border-radius: 8px !important;
+  color: #22d3ee !important;
+  font-family: var(--font-roboto), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace !important;
+}
+
+.reader-content .orv-system-window:hover {
+  box-shadow: 0 0 40px rgba(6, 182, 212, 0.3) !important;
+  border-color: rgba(6, 182, 212, 0.55) !important;
+}
+
+.reader-content .orv-system-window h4 {
+  font-family: var(--font-cinzel), serif !important;
+  letter-spacing: 0.15em !important;
+  text-shadow: 0 0 10px rgba(6, 182, 212, 0.4) !important;
+  color: #22d3ee !important;
+  border-bottom-color: rgba(6, 182, 212, 0.2) !important;
+}
+
+.reader-content .orv-system-alert {
+  background-color: rgba(6, 182, 212, 0.04) !important;
+  border-left: 3px solid #22d3ee !important;
+  border-radius: 0 8px 8px 0 !important;
+  box-shadow: 0 0 20px rgba(6, 182, 212, 0.05) !important;
+  color: #22d3ee !important;
+  font-family: var(--font-roboto), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace !important;
+  text-shadow: 0 0 5px rgba(6, 182, 212, 0.2) !important;
+  border-top: none !important;
+  border-right: none !important;
+  border-bottom: none !important;
+}
+
+.reader-content .orv-constellation-msg {
+  position: relative !important;
+  display: block !important;
+  max-width: 650px !important;
+  margin: 2.5rem auto !important;
+  padding: 0.75rem 2.5rem !important;
+  text-align: center !important;
+  font-family: var(--font-lora), var(--font-playfair), ui-serif, Georgia, serif !important;
+  font-weight: 400 !important;
+  font-style: italic !important;
+  color: inherit !important;
+  text-shadow: none !important;
+  line-height: 1.7 !important;
+}
+
+.reader-content .orv-constellation-msg::before {
+  content: "" !important;
+  position: absolute !important;
+  left: 0 !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  width: 14px !important;
+  border-left: 2px solid currentColor !important;
+  border-top: 2px solid currentColor !important;
+  border-bottom: 2px solid currentColor !important;
+  border-top-left-radius: 6px !important;
+  border-bottom-left-radius: 6px !important;
+  opacity: 0.5 !important;
+}
+
+.reader-content .orv-constellation-msg::after {
+  content: "" !important;
+  position: absolute !important;
+  right: 0 !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  width: 14px !important;
+  border-right: 2px solid currentColor !important;
+  border-top: 2px solid currentColor !important;
+  border-bottom: 2px solid currentColor !important;
+  border-top-right-radius: 6px !important;
+  border-bottom-right-radius: 6px !important;
+  opacity: 0.5 !important;
+}
+
+.orv-outergod-msg {
+  font-family: var(--font-playfair), ui-serif, Georgia, serif;
+  letter-spacing: 0.08em;
+  text-shadow: 0 0 12px rgba(52, 211, 153, 0.4);
+}
+
+.reader-content .orv-quote {
+  font-family: var(--font-lora), var(--font-playfair), ui-serif, Georgia, serif !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 1rem 2.5rem !important;
+  color: inherit !important;
+  font-style: italic !important;
+  margin: 2.25rem auto !important;
+  text-align: center !important;
+  max-width: 700px !important;
+  position: relative !important;
+}
+
+.reader-content .orv-quote p {
+  text-align: center !important;
+  font-family: var(--font-lora), var(--font-playfair), ui-serif, Georgia, serif !important;
+  font-style: italic !important;
+  color: inherit !important;
+  margin-bottom: 0 !important;
+}
+
+.reader-content .orv-quote::before {
+  content: "" !important;
+  position: absolute !important;
+  left: 0 !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  width: 15px !important;
+  background: 
+    linear-gradient(to right, currentColor, currentColor) no-repeat left top / 15px 1.5px,
+    linear-gradient(to bottom, currentColor, currentColor) no-repeat left top / 1.5px 15px,
+    linear-gradient(to right, currentColor, currentColor) no-repeat left bottom / 15px 1.5px,
+    linear-gradient(to bottom, currentColor, currentColor) no-repeat left bottom / 1.5px 15px !important;
+  opacity: 0.45 !important;
+}
+
+.reader-content .orv-quote::after {
+  content: "" !important;
+  position: absolute !important;
+  right: 0 !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  width: 15px !important;
+  background: 
+    linear-gradient(to left, currentColor, currentColor) no-repeat right top / 15px 1.5px,
+    linear-gradient(to bottom, currentColor, currentColor) no-repeat right top / 1.5px 15px,
+    linear-gradient(to left, currentColor, currentColor) no-repeat right bottom / 15px 1.5px,
+    linear-gradient(to bottom, currentColor, currentColor) no-repeat right bottom / 1.5px 15px !important;
+  opacity: 0.45 !important;
+}
+
+.reader-content .orv-translator-note {
+  font-family: var(--font-lora), var(--font-playfair), ui-serif, Georgia, serif !important;
+  font-style: italic !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0.25rem 0 !important;
+  margin: 1rem 0 !important;
+  color: inherit !important;
+  opacity: 0.85 !important;
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 0.5rem !important;
+}
+
+.reader-content .orv-translator-note p {
+  font-family: var(--font-lora), var(--font-playfair), ui-serif, Georgia, serif !important;
+  font-style: italic !important;
+  color: inherit !important;
+  margin-bottom: 0 !important;
+}
+
+.reader-content .orv-translator-note span.text-cyan-500 {
+  font-size: 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+}
+
+.reader-content .orv-translator-note span.text-cyan-500::before {
+  content: "ⓘ Note:" !important;
+  font-size: 0.875rem !important;
+  font-family: var(--font-lora), var(--font-playfair), ui-serif, Georgia, serif !important;
+  font-style: italic !important;
+  font-weight: 600 !important;
+  color: #0284c7 !important; /* sky-600 for light/sepia themes */
+  margin-right: 0.25rem !important;
+}
+
+.dark .reader-content .orv-translator-note span.text-cyan-500::before,
+.theme-orv .reader-content .orv-translator-note span.text-cyan-500::before {
+  color: #22d3ee !important; /* neon cyan for dark theme */
+  text-shadow: 0 0 8px rgba(6, 182, 212, 0.2) !important;
+}
+
+.orv-illustration img {
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8), 0 0 30px rgba(6, 182, 212, 0.05);
+}
+
+.text-shadow-cyan {
+  text-shadow: 0 0 10px rgba(6, 182, 212, 0.4);
+}
+
+/* Disable Tailwind Typography default blockquote pseudo-quotes */
+.reader-content blockquote::before,
+.reader-content blockquote::after,
+.reader-content blockquote p::before,
+.reader-content blockquote p::after {
+  content: none !important;
+}
+
+/* Watanare Chapter Title Styles */
+.reader-content[data-volume^="watanare"] h1,
+.reader-content.theme-watanare h1,
+.theme-watanare .reader-content h1 {
+  text-align: center !important;
+  font-size: clamp(2.0em, 6vw, 2.6em) !important;
+  line-height: 1.3 !important;
+  margin-top: 3rem !important;
+  margin-bottom: 3.5rem !important;
+  font-weight: 700 !important;
+  color: #be185d !important;
+  font-family: var(--font-playfair), var(--font-lora), ui-serif, Georgia, serif !important;
+  text-shadow: 0 0 20px rgba(233, 30, 99, 0.15) !important;
+  border-bottom: 1px solid rgba(233, 30, 99, 0.2) !important;
+  padding-bottom: 1.5rem !important;
+}
+
+/* Watanare Footnote References */
+.reader-content a.noteref,
+.reader-content sup a,
+.reader-content .footnote-ref {
+  color: #e91e63 !important;
+  text-decoration: none !important;
+  font-size: 0.75em !important;
+  vertical-align: super !important;
+  cursor: pointer !important;
+}
+
+/* Watanare Translator Notes */
+.reader-content .translator-note,
+.reader-content .tl-note,
+.reader-content .note,
+.reader-content div.tlnote {
+  font-style: italic !important;
+  opacity: 0.85 !important;
+  border-left: 2px solid rgba(233, 30, 99, 0.3) !important;
+  padding-left: 1rem !important;
+  margin: 1rem 0 !important;
+  display: block !important;
+  font-family: var(--font-lora), var(--font-playfair), ui-serif, Georgia, serif !important;
+}
+
+/* Watanare Footnote Section */
+.reader-content .footnotes,
+.reader-content .footnote-list,
+.reader-content div.footnotes {
+  margin-top: 3rem !important;
+  padding-top: 1rem !important;
+  border-top: 1px solid rgba(233, 30, 99, 0.15) !important;
+  font-size: 0.9em !important;
+}
+
+.reader-content .footnotes p,
+.reader-content .footnote-list p {
+  margin-bottom: 0.5em !important;
+}
+
+/* Watanare Text Glow */
+.text-shadow-pink {
+  text-shadow: 0 0 10px rgba(233, 30, 99, 0.4);
+}
+
+/* Watanare Illustration Glow */
+.watanare-illustration img {
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15), 0 0 30px rgba(233, 30, 99, 0.08);
+}
