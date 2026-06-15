@@ -120,7 +120,7 @@ export const watanareMetadata = {
   author: "	Mikami Teren",
   illustrator: "Takeshima Eku",
   genre: ["Yuri", "Rom-com", "Đời thường"],
-  synopsis: "Renako Amaori chỉ mong có một cuộc sống trung học yên bình, bình thường. Nhưng khi Mai Ouzuka - cô gái xinh đẹp và nổi tiếng - tuyên bố rằng cả hai sẽ trở thành “người yêu” trong một thí nghiệm xã hội, thế giới của Renako lập tức đảo lộn. Từ một mối quan hệ giả tạo, mọi thứ nhanh chóng xoay chuyển thành những cảm xúc thật sự, những hiểu lầm, và sự hỗn loạn ngọt ngào đầy rung động của mối tình đầu..",
+  synopsis: "Amaori Renako chỉ mong có một cuộc sống trung học yên bình, bình thường. Nhưng khi Ouzuka Mai - cô gái xinh đẹp và nổi tiếng - tuyên bố rằng cả hai sẽ trở thành “người yêu” trong một thí nghiệm xã hội, thế giới của Renako lập tức đảo lộn. Từ một mối quan hệ giả tạo, mọi thứ nhanh chóng xoay chuyển thành những cảm xúc thật sự, những hiểu lầm, và sự hỗn loạn ngọt ngào đầy rung động của mối tình đầu..",
   quote: "Tôi chỉ là một nhân vật nền thôi! Tôi đâu có được định sẵn để trở thành nhân vật chính trong một bộ phim Rom-com chứ!",
   quoteAttribution: "Amaori Renako",
   totalVolumes: 4,
