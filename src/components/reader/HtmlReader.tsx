@@ -14,7 +14,7 @@ import { AuthModal } from "@/components/auth/AuthModal"
 import { ProfileModal } from "@/components/auth/ProfileModal"
 import { ShortcutsModal } from "./ShortcutsModal"
 import { useReadingProgress } from "@/hooks/useReadingProgress"
-import AdBanner from "@/components/AdBanner"
+
 
 export type ReaderTheme = 'dark' | 'light' | 'sepia' | 'slatedark' | 'midnight' | 'forest' | 'oled' | 'espresso' | 'gray' | 'watanare-dark' | 'watanare-sakura' | 'watanare-light';
 export type ReaderFontFamily = 'serif' | 'sans' | 'merriweather' | 'roboto' | 'lora';
@@ -793,8 +793,6 @@ export function HtmlReader({ content, title, prevChapter, nextChapter, volumeId,
                             </div>
                         )}
 
-                        <AdBanner />
-
                         <style jsx global>{`
                             .reader-content p, 
                             .reader-content li,
@@ -1022,8 +1020,6 @@ export function HtmlReader({ content, title, prevChapter, nextChapter, volumeId,
                         >
                              <ReaderContent content={processedContent} volumeId={volumeId} isRezero={isRezero} isBunnyGirl={isBunnyGirl} languageMode={languageMode} />
                         </motion.div>
-
-                        <AdBanner />
                     </div>
 
 
