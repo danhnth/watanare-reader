@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Playfair_Display, Merriweather, Roboto, Lora, Be_Vietnam_Pro, Dancing_Script } from "next/font/google";
-import Script from "next/script";
+
 import "./globals.css";
 
 const inter = Inter({
@@ -133,18 +133,6 @@ export default function RootLayout({
         suppressHydrationWarning
         className={`${inter.variable} ${playfair.variable} ${merriweather.variable} ${roboto.variable} ${lora.variable} ${beVietnamPro.variable} ${dancingScript.variable} font-sans antialiased bg-background text-foreground selection:bg-primary selection:text-primary-foreground`}
       >
-        {/* Google AdSense */}
-        <Script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7547996225576947"
-          crossOrigin="anonymous"
-          strategy="afterInteractive"
-        />
-        {/* Adsterra Social Bar */}
-        <Script 
-          src='//pl29389303.profitablecpmratenetwork.com/22/16/63/221663704df730d47d3c9c66e9efbe7a.js'
-          strategy="lazyOnload"
-        />
         <RedirectPagesDev />
         <AuthProvider>
           <GlobalContinueReading />
